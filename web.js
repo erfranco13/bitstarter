@@ -2,8 +2,8 @@ var fs = require('fs');
 var express = require('express');
 
 var app = express.createServer(express.logger());
-var buf =new buffer(256);
-buf.write(fs.readFileSync('index.html'));
+var buf = new buffer(256);
+var len = buf.write(fs.readFileSync('index.html'));
 
 app.get('/', function(request, response) {
   response.send(buf.toString('utf8',0, len));
